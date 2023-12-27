@@ -1,0 +1,42 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "type": "java",
+            "name": "Debug (Launch Current File)",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Debug primeNo",
+            "request": "launch",
+            "mainClass": "primeNo",
+            "projectName": "DSA-in-Java_d69bd1ae",
+            "args": ["arg1", "arg2"],  // Command line arguments if needed
+            "stopOnEntry": false,      // Set to true if you want to stop on the main method
+            "cwd": "${workspaceFolder}",  // Current working directory
+            "sourcePaths": [
+                "${workspaceFolder}/src"  // Source code location
+            ],
+            "classpath": [
+                "${workspaceFolder}/bin",  // Output directory
+                "${workspaceFolder}/lib/**/*.jar"  // External libraries
+            ],
+            "env": {
+                "JAVA_HOME": "/path/to/java",  // Set Java home if needed
+                "PATH": "${env:PATH}:/path/to/additional/bin"  // Add to PATH if needed
+            },
+            "preLaunchTask": "compileJava",  // Task to run before launching (e.g., compile)
+            "postDebugTask": "cleanup",      // Task to run after debugging
+            "stopAtEntry": false,            // Stop at program entry point
+            "console": "internalConsole",    // Output console type
+            "serverReadyAction": {
+                "action": "openExternally",  // Open the browser for server applications
+                "pattern": "\\b(Application|Webserver) is running\\b",
+                "uriFormat": "http://localhost:8080"
+            }
+        }
+    ]
+}
